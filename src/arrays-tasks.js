@@ -412,8 +412,17 @@ function getElementByIndices(arr, indices) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let result = 0;
+  arr.map((value) => {
+    if (!value) {
+      result += 1;
+    } else {
+      result += 0;
+    }
+    return result;
+  });
+  return result;
 }
 
 /**
