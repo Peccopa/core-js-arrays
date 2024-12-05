@@ -443,8 +443,13 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  let count = -1;
+  return Array.from(Array(n), () => {
+    const arr = new Array(n).fill(0);
+    arr[(count += 1)] += 1;
+    return arr;
+  });
 }
 
 /**
